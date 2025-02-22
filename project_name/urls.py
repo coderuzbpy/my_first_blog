@@ -16,15 +16,13 @@ Including another URLconf
 """
 from django.urls import path
 from home import views
-from customer.views import get_customer
-from django.contrib.auth import views as auth_views
+
 
 urlpatterns = [
-    path('', views.home, name='home'),  # Bosh sahifa
-    path('login/', views.my_login_view, name='login'),  # Login sahifasi
-    path('logout/', auth_views.LogoutView.as_view(next_page='home'), name='logout'),  # Logout sahifasi
-    path('register/', views.register, name='register'),  # Ro'yxatdan o'tish
-    path('profile/', views.profile, name='profile'),  # Profil sahifasi
-    path('customer/', get_customer, name='customer')
+    path('', views.home, name='home'),
+    path('about/', views.about, name='about'),
+    path('services/', views.services, name='services'),
+    path('portfolio/', views.portfolio, name='portfolio'),
+    path('contact/', views.contact, name='contact')
 ]
 

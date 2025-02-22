@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaxsiy Blogim</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Umumiy stillar */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header stillari */
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .header .container {
+            display: flex;
+            align-items: center; /* Elementlarni vertikal markazga joylashtirish */
+        }
+
+        .profile-image {
+            margin-right: 20px; /* Rasm va logo orasidagi masofa */
+        }
+
+        .profile-image img {
+            width: 50px; /* Rasm o'lchami */
+            height: 50px;
+            border-radius: 50%; /* Doira shaklida qilish */
+            border: 2px solid #fff; /* Chegarasi */
+            object-fit: cover; /* Rasmni to'g'ri joylashtirish */
+        }
+
+        .header .logo a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .navbar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+        }
+
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .navbar ul li a.active, .navbar ul li a:hover {
+            color: #ff6f61;
+        }
+
+        /* Hero bo'limi stillari */
+        .hero {
+            background: url('hero-bg.jpg') no-repeat center center/cover;
+            color: #fff;
+            padding: 150px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            color: #000;
+        }
+
+        .hero .btn {
+            background-color: #ff6f61;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background-color: #ff4a3d;
+        }
+
+        /* Maqolalar bo'limi stillari */
+        .articles {
+            padding: 60px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .article-box {
+            display: inline-block;
+            width: 30%;
+            margin: 0 1.5%;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .article-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .article-box i {
+            font-size: 40px;
+            color: #ff6f61;
+            margin-bottom: 20px;
+        }
+
+        .article-box h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .article-box p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Footer stillari */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer .social-links a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer .social-links a:hover {
+            color: #ff6f61;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <!-- Rasm qismi -->
+            <div class="profile-image">
+                <img src="http://mail.tami.uz/im/k3.jpg" alt="Mening Rasmim">
+            </div>
+            <!-- Logo va menyu -->
+            <div class="logo">
+                <a href="#">Mening Blogim</a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="{% url 'home' %}" class="active">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'services' %}">Services</a></li>
+                    <li><a href="{% url 'portfolio' %}" >Portfolio</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Xush kelibsiz!</h1>
+            <p>Bu mening shaxsiy blogim. Bu yerda men o'z fikrlashlarim, tajribalarim va loyihalarimni baham ko'raman.</p>
+            <a href="about.html" class="btn">Men Haqimda</a>
+        </div>
+    </section>
+
+    <section class="articles">
+        <div class="container">
+            <h2>So'nggi Maqolalar</h2>
+            <div class="article-box">
+                <i class="fas fa-pen"></i>
+                <h3>Maqola 1</h3>
+                <p>Bu yerda maqola haqida qisqacha tavsif.</p>
+                <a href="#">Batafsil</a>
+            </div>
+            <div class="article-box">
+                <i class="fas fa-pen"></i>
+                <h3>Maqola 2</h3>
+                <p>Bu yerda maqola haqida qisqacha tavsif.</p>
+                <a href="#">Batafsil</a>
+            </div>
+            <div class="article-box">
+                <i class="fas fa-pen"></i>
+                <h3>Maqola 3</h3>
+                <p>Bu yerda maqola haqida qisqacha tavsif.</p>
+                <a href="#">Batafsil</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Mening Blogim. Barcha huquqlar himoyalangan.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

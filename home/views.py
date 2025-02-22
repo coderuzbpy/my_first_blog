@@ -5,34 +5,16 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 
 def home(request):
-    return render(request, 'home/home.html')
+    return render(request, 'home.html')
 
-def register(request):
-    if request.method == "POST":
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect('profile')
-        else:
-            print(form.errors)  # Xatoliklarni tekshirish
-    else:
-        form = UserCreationForm()
-    return render(request, 'register.html', {'form': form})
+def about(request):
+    return render(request, 'about.html')
 
-def my_login_view(request):
-    if request.method == "POST":
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
+def services(request):
+    return render(request,'services.html')
 
-        if user is not None:
-            login(request, user)
-            return redirect('profile')  # Profil sahifasiga yo'naltirish
-        else:
-            return HttpResponse("Login yoki parol xato!")
-    return render(request, 'login.html')
+def portfolio(request):
+    return render(request,'portfolio.html')
 
-@login_required
-def profile(request):
-    return render(request, 'profile.html')
+def contact(request):
+    return render(request, 'contact.html')
